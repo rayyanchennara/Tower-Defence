@@ -9,7 +9,7 @@ public class WayPath : MonoBehaviour
     [SerializeField] GameObject tower;
     [SerializeField] bool isPlaceable;
     int cost = 75;
-    public bool Isplaceable => isPlaceable;
+    public bool Isplaceable {get {return isPlaceable;}};
     Bank bank;
 
     void Start()
