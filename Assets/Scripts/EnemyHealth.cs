@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHitPoints = 3;
+    [SerializeField] int addHitPoints = 2;
     public int currentHitPoints = 0;
     Enemy enemy;
 
@@ -26,16 +27,11 @@ public class EnemyHealth : MonoBehaviour
         {
             gameObject.SetActive(false);
             currentHitPoints = 0;
+            maxHitPoints += addHitPoints;
             if(enemy != null)
             {
                 enemy.RewardProcess();
             }
         }
     }
-    void Update()
-    {
-        Debug.Log(this.gameObject.name + "" + currentHitPoints);
-
-    }
-
 }
